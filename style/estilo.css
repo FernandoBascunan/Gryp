@@ -1,0 +1,16 @@
+.rectangle{
+    border: var(--sds-size-stroke-border) solid var(--Schemes-Shadow, #000);
+    opacity: var(--sds-size-stroke-border);
+    background: var(--MAIN, linear-gradient(180deg, #0877DE 0%, #00B3FF 98.84%));   
+    width: 434px;
+    height: 932px;
+    flex-shrink: 0;
+}
+
+.icon{
+    fill: var(--sds-color-background-disabled-default);
+    opacity: var(--sds-size-stroke-border);
+    width: 171px;
+    height: 155px;
+    flex-shrink: 0;
+}
