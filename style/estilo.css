@@ -1,4 +1,5 @@
 .rectangle{
+    position: relative;
     border: var(--sds-size-stroke-border) solid var(--Schemes-Shadow, #000);
     opacity: var(--sds-size-stroke-border);
     background: var(--MAIN, linear-gradient(180deg, #0877DE 0%, #00B3FF 98.84%));   
@@ -8,8 +9,13 @@
 }
 
 .icon{
+    position: absolute;
+    top: 50%;
+    left: 50%; 
+    transform: translate(-50%, -50%); 
     fill: var(--sds-color-background-disabled-default);
     opacity: var(--sds-size-stroke-border);
+    background: var(--MAIN, linear-gradient(180deg, #63aa9e 0%, #b1ebaf 98.84%));  
     width: 171px;
     height: 155px;
     flex-shrink: 0;
