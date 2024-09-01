@@ -85,15 +85,31 @@ body, html {
 }
 /* Estilos del footer */
 .footer {
-    background-color: #00B3FF;
+    background-color: #000000;
     color: #ffffff;
     text-align: center;
     font-size: 12px;
     padding: 15px;
     width: 100%;
     justify-content: space-between;
-    position:relative;
+    position:absolute;
     bottom: 0;
+}
+
+.footer-icons {
+    display: flex;
+    justify-content: center; /* Center icons horizontally */
+    gap: 100px; /* Adjust spacing between icons */
+}
+
+.footer-icons a {
+    color: rgb(238, 238, 238); /* Color of the icons */
+    font-size: 24px; /* Size of the icons */
+    text-decoration: none; /* Remove underline from links */
+}
+
+.footer-icons a:hover {
+    color: #ffffff; /* Change color on hover */
 }
 
 /* Media queries para responsividad */
