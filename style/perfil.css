@@ -73,3 +73,11 @@ body, html {
 .active[data-content]{
     display:block;
 }
+
+.container{
+    width :100%;
+    max-width: fit-content;
+    margin:auto;
+    margin-top: auto;
+    background-color: black;
+}
