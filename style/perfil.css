@@ -78,7 +78,7 @@ body {
     border-radius: 50%;
     background: white;
     border: 3px solid black;
-    margin-top: 80;
+    margin-top: 40px;
     margin-left: 34%;
 }
 .content .button{
@@ -86,9 +86,13 @@ body {
     background-color: #000000;
     cursor: pointer;
     margin-top: 1rem;
-    margin-bottom: 4rem;
+
     padding: 10px 25px;
     border-radius: 20px;
+}
+.content .button a{
+    color:white;
+    text-decoration: none;
 }
 
 .content .Bbutton{
@@ -106,10 +110,10 @@ body {
     text-decoration: none;
 }
 
-.content.text{
-    align-items: center;
-    justify-content: center;
-
+.content h4{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
 }
 
 /* Media Queries para Responsividad */
