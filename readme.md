@@ -1,4 +1,4 @@
-## Nombre del Proyecto
+## Gryp
 ## Descripción
 
 El principal objetivo de la aplicación es ofrecer a diversos restaurant la manera de gestionar sus pedidos, menu, mesas e inventario desde una sola aplicación proporcionando una mayor comodidad. Ademas de una gestión de perfiles para que los camareros ingresen los pedidos y modifiquen la disponibilidad de las mesas.
