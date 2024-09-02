@@ -100,7 +100,7 @@ body {
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
     .header {
         padding: 10px 3%;
         height: 150px;
@@ -114,7 +114,7 @@ body {
 
 
     .header .nav-links li {
-        padding: 8px 0;
+        padding: 1px 0;
     }
 
     .header .nav-links a {
@@ -122,5 +122,8 @@ body {
         font-size: 18px;
     }
 
-    
+    .appIcon {
+        width: 80px;
+        height: 70px;
+    }
 }
