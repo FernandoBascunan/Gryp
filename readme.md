@@ -1,7 +1,7 @@
 ## Nombre del Proyecto
 ## Descripción
 
-El principal objetivo de la aplicación es ofrecer al usuario una herramienta en donde podra llevar  registro registro diario en la incorporación de nuevos hábitos y rutinas de su día a día con el fin de lograr llevar un registro personal sobre avances en salud, progresos en metas personales y objetivos concretos que ayuden al usuario a mejorar su vida, ya sea para dejar de fumar, dormir más tiempo o lograr abandonar alguna adicción poco saludable.
+El principal objetivo de la aplicación es ofrecer a diversos restaurant la manera de gestionar sus pedidos, menu, mesas e inventario desde una sola aplicación proporcionando una mayor comodidad. Ademas de una gestión de perfiles para que los camareros ingresen los pedidos y modifiquen la disponibilidad de las mesas.
 
 ## Tabla de Contenidos
 
