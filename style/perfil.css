@@ -14,7 +14,7 @@ body {
     display: inline-block;
     width: 44px;
     height: 42px;
-    background: linear-gradient(180deg, #000000 0%, #b1ebaf 98.84%);
+    background: white;
     border-radius: 50%;
     margin-left: 10px;
     margin-bottom: 10px;
@@ -59,12 +59,57 @@ body {
     color: #271f0a;
 }
 
-.appIcon {
-    width: 100px;
-    height: 90px;
-    background: linear-gradient(180deg, #ffffff 0%, #b1ebaf 98.84%);
+
+.content{
+    display:block;
+    justify-content: space-between;
+    text-align: center;
+    width: 700px;
+    height: 700px;
+    margin: auto;
+
+}
+
+
+.content .appIcon {
+    display: block;
+    width: 200px;
+    height: 190px;
     border-radius: 50%;
-    margin-bottom: 20px;
+    background: white;
+    border: 3px solid black;
+    margin-top: 80;
+    margin-left: 34%;
+}
+.content .button{
+    color: white;
+    background-color: #000000;
+    cursor: pointer;
+    margin-top: 1rem;
+    margin-bottom: 4rem;
+    padding: 10px 25px;
+    border-radius: 20px;
+}
+
+.content .Bbutton{
+    color: white;
+    background-color: #000000;
+    cursor: pointer;
+    margin-top: 3rem;
+    margin-bottom: 4rem;
+    padding: 10px 25px;
+    border-radius: 20px;
+    width: 200;
+}
+.content .Bbutton a{
+    color:white;
+    text-decoration: none;
+}
+
+.content.text{
+    align-items: center;
+    justify-content: center;
+
 }
 
 /* Media Queries para Responsividad */
