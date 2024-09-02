@@ -67,6 +67,13 @@ body {
     margin-bottom: 20px;
 }
 
+.content{
+    color: white;
+}
+
+.images{
+    color:red;
+}
 /* Media Queries para Responsividad */
 
 @media (max-width: 6000px) {
