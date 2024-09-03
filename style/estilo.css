@@ -64,3 +64,8 @@
     padding: 15px;
   }
 
+.inicio{
+    position:absolute;
+    top:47%;
+    right:50%;
+}
