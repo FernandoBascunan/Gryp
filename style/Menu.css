@@ -144,6 +144,8 @@ body {
 }
 
 .image-item img {
+    width: 300;
+    height: 150;
     max-width: 200px; /* Ajusta el tamaño de las imágenes */
     margin-bottom: 10px; /* Espacio entre la imagen y el toggle switch */
 }
