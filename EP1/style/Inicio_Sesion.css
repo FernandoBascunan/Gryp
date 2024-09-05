@@ -169,3 +169,77 @@ input[type="submit"]:hover{
     color: #ffffff; 
 }
 
+@media (max-width: 768px) {
+    /* Para tablets y pantallas medianas */
+    .formulario {
+        width: 80%;
+        padding: 20px;
+    }
+
+    .formulario h2 {
+        font-size: 22px;
+    }
+
+    .footer-icons {
+        gap: 50px; /* Reducir el espacio entre los íconos en tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    /* Para teléfonos móviles y pantallas pequeñas */
+    .formulario {
+        width: 90%;
+        padding: 10px;
+    }
+
+    .formulario h2 {
+        font-size: 18px;
+    }
+
+    .formulario form {
+        padding: 0 20px; /* Reducir el relleno en teléfonos móviles */
+    }
+
+    .correo input {
+        height: 35px; /* Ajustar la altura del campo de entrada */
+        font-size: 14px; /* Reducir el tamaño de la fuente */
+    }
+
+    input[type="submit"] {
+        height: 45px;
+        font-size: 16px;
+    }
+
+    .footer-icons {
+        gap: 30px; /* Reducir más el espacio entre íconos */
+    }
+
+    .footer {
+        font-size: 10px;
+        padding: 10px; /* Reducir el relleno del pie de página en móviles */
+    }
+}
+
+@media (max-width: 360px) {
+    /* Para pantallas aún más pequeñas (teléfonos muy pequeños) */
+    .formulario {
+        width: 95%;
+        padding: 5px;
+    }
+
+    .formulario h2 {
+        font-size: 16px;
+    }
+
+    .footer-icons {
+        gap: 20px;
+    }
+
+    .footer {
+        font-size: 9px;
+    }
+}
+
+
+
+
