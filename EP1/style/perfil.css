@@ -23,7 +23,7 @@ body {
 .gryp {
     display: inline-block;
     text-align: center;
-    text-indent: 50px; /* Se corrigió la falta de unidades */
+    text-indent: 50px; 
     font-weight: 550;
     margin-top: 10px;
 }

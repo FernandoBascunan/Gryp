@@ -7,32 +7,36 @@ El principal objetivo de la aplicación es ofrecer a diversos restaurant la mane
 
 1. [Análisis de las Funcionalidades](#análisisdelasfuncionalidades)
 2. [Prototipado Figma](#prototipadofigma)
-3. [Maquetación Responsiva](#aaquetaciónresponsiva)
+3. [Maquetación Responsiva](#maquetaciónresponsiva)
 4. [Formularios y Validación](#formulariosyvalidación)
 5. [Tecnologías](#tecnologías)
 
 
 ## Análisis de las Funcionalidades
 
-- - Creación de perfil: El usuario podrá registrarse en la aplicación y asi obtener un perfil, en donde se guardara su registro.
+- - 1-. Creación de perfil: El administrador podrá registrarse en la aplicación y asi obtener un perfil, en donde se guardara su registro. Ademas el administrador podrá crear los perfiles de los usuarios con permisos restringidos.
 
-- - Registro de hábitos/rutinas: El usuario podrá administrar sus hábitos según sus necesidades. Podra agregar nuevos hábitos que desee añadir a su rutina, y diariamente podrá registrar su avance. Tambien podra editar o eliminar hábitos según sus necesidades.
+- - 2-. Reportes: El administrador podra descargar reportes de ventas mensuales y anuales de ventas en formato pdf.
 
-- - Editar perfil: El usuario que posea un perfil en la aplicación, podra editar su perfil, pudiendo agregar un avatar como modificando sus datos.
+- - 3-. Disponibilidad de mesas: El usuario podrá gestionar la disponibilidad de las mesas, marcandolas como ocupadas o libres.
 
-- - Blogs: En los blogs los usuarios podran compartir y leer experincias de usuarios.
+- - 4-. Gestionar mesas: El administrador podrá agregar o eliminar mesas.
 
-- - Resumen de sus hábitos: El usuario podra ver un resumen del seguimiento de sus hábitos.
+- - 5-. Inventario: El administrador podrá visualizar el inventario de su restaurant.
 
-- - Informar al usuario: Se le presentara al usuario durante su creacion o eliminacion de malos habitos, para dar a conocer hechos que podrian estarle sucediendo al usuario en su transición.
+- - 6-. Menu: Permite al usuario activar o desactivar platos del menu.
+
+- - 7-.Gestionar ordenes: Al abrir una mesa permitira al usuario ingresar una orden o marcar como lista dicha orden.
 
 ## Prototipado en Figma
 
-[Prototipo Wireframe](https://www.figma.com/proto/OTowrJNe7AAEzTw5mqKgTv/DTS)
+[Prototipo Wireframe](https://www.figma.com/design/XkI0pSBGcuQC4rykfZGxyl/Gryp?node-id=40-1145&t=3vymzjUVJHbVxAvd-1)
 
 ## Maquetación Responsiva
-La aplicación será desarrollada con HTML5, CSS3 y JavaScript, utilizando frameworks como Bootstrap para la
+La aplicación será desarrollada con HTML5, CSS3 y JavaScript, utilizando media querys para la
 maquetación responsiva.
+
+## Formularios y validación
 
 ## Tecnologías
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
