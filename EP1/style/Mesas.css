@@ -134,3 +134,53 @@ body {
         height: 70px;
     }
 }
+
+.imagen {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 40px;
+    color:#271f0a;
+}
+
+.image-item {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 20px; 
+    margin-right: 50px;
+    margin-left: 20px;
+}
+
+.image-item img {
+    width: 300;
+    height: 150;
+    max-width: 200px; 
+    margin-bottom: 10px; 
+}
+
+.add-mesa-container {
+    position: fixed; /* Fijo para que siempre esté visible */
+    bottom: 20px;    /* A 20px del borde inferior */
+    left: 20px;      /* A 20px del borde izquierdo */
+    display: flex;   /* Para que el input y botón estén alineados */
+    gap: 10px;       /* Espacio entre el input y el botón */
+}
+
+.add-mesa-container input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.add-mesa-container button {
+    padding: 10px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add-mesa-container button:hover {
+    background-color: #0056b3;
+}

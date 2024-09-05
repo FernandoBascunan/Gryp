@@ -22,16 +22,76 @@
             </nav>
         </header>
         <div class="content">
-            <img class="images" src="../Images/Mesa Ocupada.png" />
-            <img class="images" src="../Images/Mesa Ocupada.png" />
-            <img class="images" src="../Images/Mesa Ocupada.png" />
-            <img class="images" src="../Images/Mesa Ocupada.png" />
-            <img class="images" src="../Images/Mesa Ocupada.png" />
-            <img class="images" src="../Images/Mesa Ocupada.png" />
-            
+            <div class = "imagen">
+                <div class="image-item">
+                    <h4>Mesa 1</h4>
+                    <img src="../Images/Mesa Disponible.png" />
+                </div>
+                <div class="image-item">
+                    <h4>Mesa 2</h4>
+                    <img src="../Images/Mesa Disponible.png" />
+                </div>
+                <div class="image-item">
+                    <h4>Mesa 3</h4>
+                    <img src="../Images/Mesa Ocupada.png" />
+                </div>
+                <div class="image-item">
+                    <h4>Mesa 4</h4>
+                    <img src="../Images/Mesa Ocupada.png" />
+                </div>
+                <div class="image-item">
+                    <h4>Mesa 5</h4>
+                    <img src="../Images/Mesa Ocupada.png" />
+                </div>
+                <div class="image-item">
+                    <h4>Mesa 6</h4>
+                    <img src="../Images/Mesa Ocupada.png" />
+                </div>
+            </div>
+            <div class="mesas-container" id="mesasContainer">
+                <!-- Mesas se agregarán dinámicamente aquí -->
+            </div>
+            <div class="add-mesa-container">
+                <input type="text" id="mesaNameInput" placeholder="Nombre de la Mesa" />
+                <button id="agregarMesaBtn">Agregar Mesa</button>
+            </div>
+            <div class="personas">
+                <label for="personas">Personas</label>
+                <div class="personas-input">
+                    <button id="personasMenos">-</button>
+                    <input type="text" id="personas" value="0" readonly/>
+                    <button id="personasMas">+</button>
+                </div>
+            </div>
+
+            <div class="selectores">
+                <label for="cliente">Cliente</label>
+                <select id="cliente">
+                    <option value="cliente1">Lalo Ramirez</option>
+                    <option value="cliente2">Aniel Salado</option>
+                    <option value="cliente3">Pecua</option>
+                </select>
+
+                <label for="garzon">Garzón</label>
+                <select id="garzon">
+                    <option value="garzon1">Ulloa Garzón</option>
+                    <option value="garzon2">Esequiel Pulgado</option>
+                    <option value="garzon3">Eu Alfred</option>
+                </select>
+            </div>
+
+            <div class="comentario">
+                <label for="comentario">Comentario</label>
+                <textarea id="comentario" rows="4" placeholder="Escribe aquí"></textarea>
+            </div>
+
+            <div class="acciones">
+                <button id="eliminarMesa" class="btn-danger">Eliminar Mesa</button>
+                <button id="abrirMesa" class="btn-success">Abrir mesa</button>
+            </div>
         </div>
        
-        
+        <script src="mesas.js"></script>
         <script src="" async defer></script>
     </body>
 </html>
