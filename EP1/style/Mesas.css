@@ -134,7 +134,7 @@ body {
         height: 70px;
     }
 }
-
+/* 1 */
 .imagen {
     display: flex;
     flex-wrap: wrap;
@@ -160,11 +160,11 @@ body {
 }
 
 .add-mesa-container {
-    position: fixed; /* Fijo para que siempre esté visible */
-    bottom: 20px;    /* A 20px del borde inferior */
-    left: 20px;      /* A 20px del borde izquierdo */
-    display: flex;   /* Para que el input y botón estén alineados */
-    gap: 10px;       /* Espacio entre el input y el botón */
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    gap: 10px;  
 }
 
 .add-mesa-container input {
@@ -175,12 +175,219 @@ body {
 
 .add-mesa-container button {
     padding: 10px;
-    background-color: #007bff;
+    background-color: #000000;
+    color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
-.add-mesa-container button:hover {
+/* 2 */
+
+.mesa-detalles {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;       
+    padding: 20px;
+    width: 500px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.mesa-detalles h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.personas {
+    margin-bottom: 15px;
+}
+
+.personas label{
+    color:#271f0a;
+}
+
+.personas-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.personas-input button {
+    width: 30px;
+    height: 30px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.personas-input button:hover {
     background-color: #0056b3;
+}
+
+.personas-input input {
+    width: 50px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.selectores {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.selectores label {
+    text-align: left;
+    color:#271f0a;
+}
+
+select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.comentario {
+    margin-bottom: 20px;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+}
+
+.acciones {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-danger {
+    background-color: #292929;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-success {
+    background-color: #292929;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* 3 */
+
+.confirmacion-container {
+    position: fixed;  
+    width: 350px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ccc;
+}
+
+.mesa-info {
+    margin-bottom: 20px;
+    text-align: left;
+    color:#000000;
+}
+
+.mesa-info h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.mesa-info p {
+    font-size: 14px;
+    color: #555;
+}
+
+
+.productos-container {
+    margin-bottom: 20px;
+}
+
+.productos-container h4 {
+    margin-bottom: 10px;
+    color:#000000;
+}
+
+.producto-input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.producto {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    color:#000000;
+}
+
+.cantidad-btn, .eliminar-btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cantidad-btn {
+    width: 30px;
+}
+
+.total-container {
+    text-align: center;
+}
+
+.total-container h4 {
+    margin-bottom: 10px;
+    color:#000000;
+}
+
+.botones {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cancelar-btn, .confirmar-btn {
+    padding: 10px 20px;
+    border-radius: 1px;
+    cursor: pointer;
+}
+
+.cancelar-btn {
+    background-color: #ffffff;
+    color:#494949;
+}
+
+.confirmar-btn {
+    background-color: #469ae7;
+    color: #d4e4f2;
 }

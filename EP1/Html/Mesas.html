@@ -22,6 +22,7 @@
             </nav>
         </header>
         <div class="content">
+            <!-- 1 -->
             <div class = "imagen">
                 <div class="image-item">
                     <h4>Mesa 1</h4>
@@ -49,49 +50,76 @@
                 </div>
             </div>
             <div class="mesas-container" id="mesasContainer">
-                <!-- Mesas se agregarán dinámicamente aquí -->
             </div>
             <div class="add-mesa-container">
                 <input type="text" id="mesaNameInput" placeholder="Nombre de la Mesa" />
                 <button id="agregarMesaBtn">Agregar Mesa</button>
             </div>
-            <div class="personas">
-                <label for="personas">Personas</label>
-                <div class="personas-input">
-                    <button id="personasMenos">-</button>
-                    <input type="text" id="personas" value="0" readonly/>
-                    <button id="personasMas">+</button>
+            <!-- 2 -->
+            <div class="mesa-detalles">
+                <div class="personas">
+                    <label for="personas">Personas</label>
+                    <div class="personas-input">
+                        <button id="personasMenos">-</button>
+                        <input type="text" id="personas" value="0" readonly/>
+                        <button id="personasMas">+</button>
+                    </div>
+                </div>
+                <div class="selectores">
+                    <label for="cliente">Cliente</label>
+                    <select id="cliente">
+                        <option value="cliente1">Lalo Ramirez</option>
+                        <option value="cliente2">Aniel Salado</option>
+                        <option value="cliente3">Pecua</option>
+                    </select>
+
+                    <label for="garzon">Garzón</label>
+                    <select id="garzon">
+                        <option value="garzon1">Ulloa Garzón</option>
+                        <option value="garzon2">Esequiel Pulgado</option>
+                        <option value="garzon3">Eu Alfred</option>
+                    </select>
+                </div>
+
+                <div class="comentario">
+                    <label for="comentario"></label>
+                    <textarea id="comentario" rows="4" placeholder="Comentario"></textarea>
+                </div>
+
+                <div class="acciones">
+                    <button id="eliminarMesa" class="btn-danger">Eliminar Mesa</button>
+                    <button id="abrirMesa" class="btn-success">Abrir mesa</button>
                 </div>
             </div>
-
-            <div class="selectores">
-                <label for="cliente">Cliente</label>
-                <select id="cliente">
-                    <option value="cliente1">Lalo Ramirez</option>
-                    <option value="cliente2">Aniel Salado</option>
-                    <option value="cliente3">Pecua</option>
-                </select>
-
-                <label for="garzon">Garzón</label>
-                <select id="garzon">
-                    <option value="garzon1">Ulloa Garzón</option>
-                    <option value="garzon2">Esequiel Pulgado</option>
-                    <option value="garzon3">Eu Alfred</option>
-                </select>
-            </div>
-
-            <div class="comentario">
-                <label for="comentario">Comentario</label>
-                <textarea id="comentario" rows="4" placeholder="Escribe aquí"></textarea>
-            </div>
-
-            <div class="acciones">
-                <button id="eliminarMesa" class="btn-danger">Eliminar Mesa</button>
-                <button id="abrirMesa" class="btn-success">Abrir mesa</button>
+            <!-- 3 -->
+            <div class="confirmacion-container">
+                <div class="mesa-info">
+                    <h3>Mesa 2</h3>
+                    <p>2 Personas, Fernando, 06/09 13:56:57</p>
+                </div>
+                <div class="productos-container">
+                    <h4>Adicionar productos</h4>
+                    <input type="text" placeholder="Buscar producto..." class="producto-input">
+                    <div class="producto">
+                        <button class="cantidad-btn">-</button>
+                        <span>coca-cola-zero-botella-500-cc</span>
+                        <span>$1600</span>
+                        <button class="cantidad-btn">+</button>
+                        <button class="eliminar-btn">✖</button>
+                    </div>
+                </div>
+                <div class="total-container">
+                    <h4>Total a confirmar: $1600</h4>
+                    <div class="botones">
+                        <button class="cancelar-btn">Cancelar</button>
+                        <button class="confirmar-btn">Confirmar</button>
+                    </div>
+                </div>
             </div>
         </div>
        
         <script src="mesas.js"></script>
+        <script src="../scripts/MesaDetalles.js"></script>
         <script src="" async defer></script>
     </body>
 </html>
