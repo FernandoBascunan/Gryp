@@ -62,7 +62,7 @@ body {
 .appIcon {
     width: 100px;
     height: 90px;
-    background: linear-gradient(180deg, #ffffff 0%, #b1ebaf 98.84%);
+    background:white;
     border-radius: 50%;
     margin-bottom: 20px;
 }
