@@ -37,8 +37,10 @@ La aplicación será desarrollada con HTML5, CSS3 y JavaScript, utilizando media
 maquetación responsiva.
 
 ## Formularios y validación
-
+Para el formulario y validación utilizamos funciones en js las cuales pemiten cierto formato en los campos de correo, rut, contraseña, mostrando un mensaje de error como podemos ver en Registro.html.
 ## Tecnologías
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
 ![HTML](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)
 ![CSS](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)
+
+|
