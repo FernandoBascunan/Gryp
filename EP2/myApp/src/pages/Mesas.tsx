@@ -14,6 +14,8 @@ import {
 } from '@ionic/react';
 import { add, remove, close } from 'ionicons/icons';
 import './Mesas.css';
+import Header from './Header';
+import Footer from './Footer';
 
 interface Mesa {
   id: number;
@@ -56,6 +58,7 @@ const Mesas: React.FC = () => {
 
   return (
     <IonPage>
+      <Header/>
       <IonHeader>
         <IonToolbar>
           <IonTitle>Gestión de Mesas</IonTitle>
@@ -110,6 +113,7 @@ const Mesas: React.FC = () => {
           ]}
         />
       </IonContent>
+      <Footer/>
     </IonPage>
   );
 };

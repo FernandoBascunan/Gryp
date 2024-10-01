@@ -16,6 +16,8 @@ import {
   IonList,
   IonAlert
 } from '@ionic/react';
+import Header from './Header';
+import Footer from './Footer';
 
 interface Producto {
   id: number;
@@ -80,6 +82,7 @@ const Inventario: React.FC = () => {
 
   return (
     <IonPage>
+      <Header/>
       <IonHeader>
         <IonToolbar>
           <IonTitle>Gestión de Inventario</IonTitle>
@@ -161,6 +164,7 @@ const Inventario: React.FC = () => {
           </IonContent>
         </IonModal>
       </IonContent>
+      <Footer/>
     </IonPage>
   );
 };

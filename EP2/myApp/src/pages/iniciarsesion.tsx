@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { IonContent, IonPage, IonInput, IonButton, IonItem, IonLabel, IonHeader, IonToolbar, IonTitle, IonIcon, IonFooter, IonRouterOutlet } from '@ionic/react';
-import { Route, useHistory,Redirect } from 'react-router-dom';
+import {useHistory} from 'react-router-dom';
 
 import './iniciarsesion.css'
 import { logoFacebook, logoTwitter, logoInstagram } from 'ionicons/icons';

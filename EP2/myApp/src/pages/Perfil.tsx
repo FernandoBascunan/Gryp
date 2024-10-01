@@ -16,6 +16,8 @@ import {
 import { mailOutline, callOutline, settings, logOut } from 'ionicons/icons';
 import './Perfil.css';
 import { useHistory } from 'react-router-dom';
+import Tab1 from './Header';
+import Footer from './Footer';
 
 const Perfil: React.FC = () => {
   const history = useHistory();
@@ -26,6 +28,7 @@ const Perfil: React.FC = () => {
 
   return (
     <IonPage>
+      <Tab1/>
       <IonHeader>
         <IonToolbar>
           <IonTitle>Perfil</IonTitle>
@@ -69,7 +72,9 @@ const Perfil: React.FC = () => {
             <IonLabel>Cerrar Sesión</IonLabel>
           </IonItem>
         </IonList>
+        
       </IonContent>
+      <Footer/>
     </IonPage>
   );
 };

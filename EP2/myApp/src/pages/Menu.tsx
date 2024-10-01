@@ -13,9 +13,12 @@ import {
   IonToggle,
   IonToolbar,
   IonTitle,
-  IonHeader
+  IonHeader,
+  IonPage
 } from '@ionic/react';
 import { pizza, fastFood, leaf, fish } from 'ionicons/icons';
+import Header from './Header';
+import Footer from './Footer';
 interface Dish {
   name: string;
   image: string;
@@ -39,7 +42,10 @@ const Menu: React.FC = () => {
 
   return (
     
-    <IonContent>
+    <IonPage>
+            <Header/>
+      <IonContent>
+
       <IonHeader>
         <IonToolbar>
           <IonTitle>Perfil</IonTitle>
@@ -68,7 +74,10 @@ const Menu: React.FC = () => {
           ))}
         </IonRow>
       </IonGrid>
+
     </IonContent>
+    <Footer/>
+    </IonPage>
   );
 };
 
