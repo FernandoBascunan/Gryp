@@ -11,9 +11,10 @@ const iniciarsesion: React.FC = () => {
   const history = useHistory();
   const handleLogin = () => {
     history.push('./Tab1');
-
   };
-
+  const handleRegister = () =>{
+    history.push('./registro')
+  }
   return (
     <IonPage>
       <IonHeader >
@@ -55,7 +56,7 @@ const iniciarsesion: React.FC = () => {
             <IonButton expand="block" onClick={handleLogin}>
               Login
             </IonButton>
-            <IonButton expand="block">
+            <IonButton expand="block"  onClick={handleRegister}>
               Registrarme
             </IonButton>
           </div>

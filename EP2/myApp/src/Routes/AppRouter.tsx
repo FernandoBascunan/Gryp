@@ -7,11 +7,13 @@ import Mesas from '../pages/Mesas';
 import Menu from '../pages/Menu';
 import Inventario from '../pages/Inventario';
 import iniciarsesion from '../pages/iniciarsesion';
+import Registro from '../pages/registro'
 
 const AppRouter:React.FC =()=>{
     return (
         <IonReactRouter>
               <Route path='/'> <Redirect to="/iniciarsesion" /></Route>
+              <Route path='/registro' component={Registro} exact={true}/>
               <Route path="/Perfil" component={Perfil} exact={true} />
               <Route path="/Mesas" component={Mesas} exact={true} />
               <Route path="/Menu" component={Menu} exact={true} />
