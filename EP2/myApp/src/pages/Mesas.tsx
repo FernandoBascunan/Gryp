@@ -14,8 +14,8 @@ import {
 } from '@ionic/react';
 import { add, remove, close } from 'ionicons/icons';
 import './Mesas.css';
-import Header from './Header';
 import Footer from './Footer';
+import Header from './Header';
 
 interface Mesa {
   id: number;
@@ -81,7 +81,7 @@ const Mesas: React.FC = () => {
         <IonGrid>
           <IonRow>
             {mesas.map(mesa => (
-              <IonCol size="3" key={mesa.id}> {}
+              <IonCol size="4" key={mesa.id}>
                 <div 
                   className={`mesa ${mesasSeleccionadas.includes(mesa.id) ? 'seleccionada' : ''}`} 
                   onClick={() => toggleSeleccionMesa(mesa.id)}

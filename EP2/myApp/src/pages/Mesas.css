@@ -35,3 +35,11 @@
 .mesa:hover {
   transform: scale(1.05);
 }
+
+.mesa.ocupada {
+  background-color: #ff4961;
+}
+
+.mesa.desocupada {
+  background-color: #2dd36f;
+}
