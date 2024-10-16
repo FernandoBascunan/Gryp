@@ -19,7 +19,7 @@ import {
 import Header from './Header';
 import Footer from './Footer';
 
-// Import the JSON file
+
 import inventarioData from '../inventario.json';
 
 interface Producto {
@@ -46,31 +46,25 @@ const Inventario: React.FC = () => {
   });
 
   useEffect(() => {
-    // Load data from the JSON file when the component mounts
     setProductos(inventarioData);
   }, []);
 
-  // Function to add a new product
   const agregarProducto = () => {
     setProductos([...productos, { ...nuevoProducto, id: productos.length + 1 }]);
     setShowModal(false);
     limpiarCampos();
   };
 
-  // Function to delete a product
   const eliminarProducto = (id: number) => {
     setProductos(productos.filter(producto => producto.id !== id));
     setShowAlert(false);
   };
-
-  // Function to open the modal and load the product data for editing
   const editarProducto = (producto: Producto) => {
     setProductoEdit(producto);
     setNuevoProducto(producto);
     setShowModal(true);
   };
 
-  // Function to save changes to an edited product
   const guardarCambios = () => {
     setProductos(
       productos.map(p => (p.id === nuevoProducto.id ? nuevoProducto : p))
@@ -79,7 +73,6 @@ const Inventario: React.FC = () => {
     limpiarCampos();
   };
 
-  // Function to clear the form fields
   const limpiarCampos = () => {
     setNuevoProducto({ id: 0, tipo: '', ubicacion: '', producto: '', unidad: '', cantidad: 0 });
     setProductoEdit(null);
@@ -97,7 +90,6 @@ const Inventario: React.FC = () => {
         <IonButton expand="block" onClick={() => setShowModal(true)}>Agregar Producto</IonButton>
 
         <IonGrid>
-          {/* Table header */}
           <IonRow>
             <IonCol><strong>ID</strong></IonCol>
             <IonCol><strong>Tipo de Producto</strong></IonCol>
@@ -108,7 +100,6 @@ const Inventario: React.FC = () => {
             <IonCol><strong>Acciones</strong></IonCol>
           </IonRow>
 
-          {/* Product rows */}
           {productos.map(producto => (
             <IonRow key={producto.id}>
               <IonCol>{producto.id}</IonCol>
@@ -121,7 +112,6 @@ const Inventario: React.FC = () => {
                 <IonButton color="primary" size="small" onClick={() => editarProducto(producto)}>Editar</IonButton>
                 <IonButton color="danger" size="small" onClick={() => setShowAlert(true)}>Eliminar</IonButton>
 
-                {/* Confirmation alert for deletion */}
                 <IonAlert
                   isOpen={showAlert}
                   onDidDismiss={() => setShowAlert(false)}
@@ -137,7 +127,6 @@ const Inventario: React.FC = () => {
           ))}
         </IonGrid>
 
-        {/* Modal for adding/editing product */}
         <IonModal isOpen={showModal} onDidDismiss={() => setShowModal(false)}>
           <IonContent>
             <IonList>
