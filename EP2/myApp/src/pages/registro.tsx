@@ -13,17 +13,16 @@ import {
   IonFooter,
   IonSelect,
   IonSelectOption,
-  IonCheckbox
+  IonCheckbox,
+  IonText
 } from '@ionic/react';
 import { useHistory } from 'react-router-dom';
 import { logoFacebook, logoTwitter, logoInstagram } from 'ionicons/icons';
 
-import './registro.css' // Reutilizamos el mismo archivo CSS
+import './registro.css'
 
-// Definimos un tipo para las regiones
 type Region = 'Región Metropolitana' | 'Valparaíso' | 'Biobío';
 
-// Definimos una interfaz para el objeto de comunas
 interface ComunasPorRegion {
   [key: string]: string[];
 }
@@ -38,18 +37,54 @@ const Registro: React.FC = () => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [acceptTerms, setAcceptTerms] = useState(false);
+  const [errors, setErrors] = useState<{[key: string]: string}>({});
   const history = useHistory();
-
-  const handleRegistro = () => {
-    console.log('Registro exitoso');
-    history.push('./iniciarsesion');
-  };
 
   const regiones: Region[] = ['Región Metropolitana', 'Valparaíso', 'Biobío'];
   const comunas: ComunasPorRegion = {
     'Región Metropolitana': ['Santiago', 'Providencia', 'Las Condes'],
     'Valparaíso': ['Viña del Mar', 'Valparaíso', 'Quilpué'],
     'Biobío': ['Concepción', 'Talcahuano', 'Chillán']
+  };
+
+  const validateRut = (rut: string) => {
+    const rutRegex = /^[0-9]{7,8}-[0-9Kk]{1}$/;
+    return rutRegex.test(rut);
+  };
+
+  const validateEmail = (email: string) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const validatePhone = (phone: string) => {
+    const phoneRegex = /^\+?56?\s?[2-9]\d{8}$/;
+    return phoneRegex.test(phone);
+  };
+
+  const validatePassword = (password: string) => {
+    return password.length >= 8;
+  };
+
+  const handleRegistro = () => {
+    const newErrors: {[key: string]: string} = {};
+
+    if (!username) newErrors.username = 'El nombre de usuario es requerido.';
+    if (!validateRut(rut)) newErrors.rut = 'RUT inválido. El formato correcto es 12345678-9 o 1234567-8.';
+    if (!validateEmail(email)) newErrors.email = 'Email inválido. El formato correcto es ejemplo@dominio.com.';
+    if (!validatePhone(phone)) newErrors.phone = 'Número telefónico inválido. El formato correcto es +56912345678 o 912345678.';
+    if (!region) newErrors.region = 'Seleccione una región.';
+    if (!comuna) newErrors.comuna = 'Seleccione una comuna.';
+    if (!validatePassword(password)) newErrors.password = 'La contraseña debe tener al menos 8 caracteres.';
+    if (password !== confirmPassword) newErrors.confirmPassword = 'Las contraseñas no coinciden.';
+    if (!acceptTerms) newErrors.acceptTerms = 'Debe aceptar los términos y condiciones.';
+
+    setErrors(newErrors);
+
+    if (Object.keys(newErrors).length === 0) {
+      console.log('Registro exitoso');
+      history.push('./iniciarsesion');
+    }
   };
 
   return (
@@ -85,18 +120,22 @@ const Registro: React.FC = () => {
               <IonLabel position="floating">Nombre de usuario</IonLabel>
               <IonInput value={username} onIonChange={e => setUsername(e.detail.value!)} />
             </IonItem>
+            {errors.username && <IonText color="danger">{errors.username}</IonText>}
             <IonItem>
               <IonLabel position="floating">RUT</IonLabel>
               <IonInput value={rut} onIonChange={e => setRut(e.detail.value!)} />
             </IonItem>
+            {errors.rut && <IonText color="danger">{errors.rut}</IonText>}
             <IonItem>
               <IonLabel position="floating">Email</IonLabel>
               <IonInput type="email" value={email} onIonChange={e => setEmail(e.detail.value!)} />
             </IonItem>
+            {errors.email && <IonText color="danger">{errors.email}</IonText>}
             <IonItem>
               <IonLabel position="floating">Número telefónico</IonLabel>
               <IonInput type="tel" value={phone} onIonChange={e => setPhone(e.detail.value!)} />
             </IonItem>
+            {errors.phone && <IonText color="danger">{errors.phone}</IonText>}
             <IonItem>
               <IonLabel>Región</IonLabel>
               <IonSelect value={region} onIonChange={e => setRegion(e.detail.value)}>
@@ -105,6 +144,7 @@ const Registro: React.FC = () => {
                 ))}
               </IonSelect>
             </IonItem>
+            {errors.region && <IonText color="danger">{errors.region}</IonText>}
             <IonItem>
               <IonLabel>Comuna</IonLabel>
               <IonSelect value={comuna} onIonChange={e => setComuna(e.detail.value)} disabled={!region}>
@@ -113,19 +153,23 @@ const Registro: React.FC = () => {
                 ))}
               </IonSelect>
             </IonItem>
+            {errors.comuna && <IonText color="danger">{errors.comuna}</IonText>}
             <IonItem>
               <IonLabel position="floating">Contraseña</IonLabel>
               <IonInput type="password" value={password} onIonChange={e => setPassword(e.detail.value!)} />
             </IonItem>
+            {errors.password && <IonText color="danger">{errors.password}</IonText>}
             <IonItem>
               <IonLabel position="floating">Confirmar Contraseña</IonLabel>
               <IonInput type="password" value={confirmPassword} onIonChange={e => setConfirmPassword(e.detail.value!)} />
             </IonItem>
+            {errors.confirmPassword && <IonText color="danger">{errors.confirmPassword}</IonText>}
             <IonItem>
               <IonLabel>Acepto los términos y condiciones</IonLabel>
               <IonCheckbox checked={acceptTerms} onIonChange={e => setAcceptTerms(e.detail.checked)} />
             </IonItem>
-            <IonButton expand="block" onClick={handleRegistro} disabled={!acceptTerms}>
+            {errors.acceptTerms && <IonText color="danger">{errors.acceptTerms}</IonText>}
+            <IonButton expand="block" onClick={handleRegistro}>
               Registrarme
             </IonButton>
             <IonButton expand="block" fill="clear" onClick={() => history.push('./iniciarsesion')}>

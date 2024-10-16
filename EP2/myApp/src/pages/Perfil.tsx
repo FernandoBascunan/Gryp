@@ -13,7 +13,7 @@ import {
   IonIcon,
   IonButton
 } from '@ionic/react';
-import { mailOutline, callOutline, settings, logOut } from 'ionicons/icons';
+import { mailOutline, callOutline, settings, logOut,idCardOutline, compassOutline,personAddOutline} from 'ionicons/icons';
 import './Perfil.css';
 import { useHistory } from 'react-router-dom';
 import Tab1 from './Header';
@@ -46,6 +46,13 @@ const Perfil: React.FC = () => {
         <IonList>
           <IonListHeader>Información de contacto</IonListHeader>
           <IonItem>
+            <IonIcon icon={idCardOutline} slot="start" />
+            <IonLabel>
+              <h2>Rut</h2>
+              <p>12.345.678-9</p>
+            </IonLabel>
+          </IonItem>
+          <IonItem>
             <IonIcon icon={mailOutline} slot="start" />
             <IonLabel>
               <h2>Email</h2>
@@ -59,6 +66,13 @@ const Perfil: React.FC = () => {
               <p>+1 234 567 890</p>
             </IonLabel>
           </IonItem>
+          <IonItem>
+            <IonIcon icon={compassOutline} slot="start" />
+            <IonLabel>
+              <h2>Dirección</h2>
+              <p>Avenida Brasil 2241,Valparaíso</p>
+            </IonLabel>
+          </IonItem>
         </IonList>
 
         <IonList>
@@ -66,6 +80,10 @@ const Perfil: React.FC = () => {
           <IonItem button>
             <IonIcon icon={settings} slot="start" />
             <IonLabel>Configuración</IonLabel>
+          </IonItem>
+          <IonItem button>
+            <IonIcon icon={personAddOutline} slot="start" />
+            <IonLabel>Crear Perfiles</IonLabel>
           </IonItem>
           <IonItem button onClick={handleLoginRedirect}>
             <IonIcon icon={logOut} slot="start" />

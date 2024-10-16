@@ -54,7 +54,7 @@ const Menu: React.FC = () => {
       <IonGrid>
         <IonRow>
           {dishes.map((dish, index) => (
-            <IonCol size="2" key={index}>
+            <IonCol size="6" sizeSm="3" sizeMd="2" key={index}>
               <IonCard>
                 <img src={dish.image} alt={dish.name} />
                 <IonCardHeader>
