@@ -8,6 +8,7 @@ import Menu from '../pages/Menu';
 import Inventario from '../pages/Inventario';
 import iniciarsesion from '../pages/iniciarsesion';
 import Registro from '../pages/registro'
+import CrearPerfil from '../pages/CrearPerfil';
 
 const AppRouter:React.FC =()=>{
     return (
@@ -19,6 +20,7 @@ const AppRouter:React.FC =()=>{
               <Route path="/Menu" component={Menu} exact={true} />
               <Route path="/Inventario" component={Inventario} exact={true} />
               <Route path="/iniciarsesion" component={iniciarsesion} exact={true} />
+              <Route path="/crear-perfil" component={CrearPerfil} />
               <Route path="/Tab1" render={() => <Redirect to="/Perfil" />} exact={true} />
         </IonReactRouter>
     )

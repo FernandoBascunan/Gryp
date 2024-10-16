@@ -13,7 +13,7 @@ import {
   IonIcon,
   IonButton
 } from '@ionic/react';
-import { mailOutline, callOutline, settings, logOut,idCardOutline, compassOutline,personAddOutline} from 'ionicons/icons';
+import { mailOutline, callOutline, settings, logOut,idCardOutline, compassOutline,personAddOutline,documentOutline} from 'ionicons/icons';
 import './Perfil.css';
 import { useHistory } from 'react-router-dom';
 import Tab1 from './Header';
@@ -23,7 +23,11 @@ const Perfil: React.FC = () => {
   const history = useHistory();
 
   const handleLoginRedirect = () => {
-    history.push('/iniciarsesion'); // Cambiado de '/Login' a '/iniciarsesion'
+    history.push('/iniciarsesion');
+  };
+
+  const handleReportRedirect = () => {
+    window.open('../Archivos/Mensual.pdf', '_blank');
   };
 
   return (
@@ -81,13 +85,17 @@ const Perfil: React.FC = () => {
             <IonIcon icon={settings} slot="start" />
             <IonLabel>Configuración</IonLabel>
           </IonItem>
-          <IonItem button>
+          <IonItem button onClick={() => history.push('/crear-perfil')}>
             <IonIcon icon={personAddOutline} slot="start" />
             <IonLabel>Crear Perfiles</IonLabel>
           </IonItem>
           <IonItem button onClick={handleLoginRedirect}>
             <IonIcon icon={logOut} slot="start" />
             <IonLabel>Cerrar Sesión</IonLabel>
+          </IonItem>
+          <IonItem button onClick={handleReportRedirect}>
+            <IonIcon icon={documentOutline} slot="start" />
+            <IonLabel>Reportes Mensuales</IonLabel>
           </IonItem>
         </IonList>
         

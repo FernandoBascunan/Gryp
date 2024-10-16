@@ -3,12 +3,15 @@ import { IonContent, IonPage, IonInput, IonButton, IonItem, IonLabel, IonHeader,
 import { useHistory } from 'react-router-dom';
 import './iniciarsesion.css';
 import { logoFacebook, logoTwitter, logoInstagram } from 'ionicons/icons';
+import usuarioData from '../usuario.json';
+
 
 const iniciarsesion: React.FC = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [emailError, setEmailError] = useState('');
   const [passwordError, setPasswordError] = useState('');
+  const [loginError, setLoginError] = useState('');
   const history = useHistory();
 
   const validateEmail = (email: string) => {
@@ -37,9 +40,24 @@ const iniciarsesion: React.FC = () => {
     } else {
       setPasswordError('');
     }
-
+    interface Usuario {
+      email: string;
+      password: string;
+      name: string;
+      location: string;
+      phone: string;
+      rut: string;
+    }
     if (valid) {
-      history.push('./Tab1');
+      const usuarioList: Usuario[] = usuarioData as Usuario[];
+      const user = usuarioList.find((u) => u.email === email && u.password === password);
+      
+      if (user) {
+        setLoginError('');
+        history.push('./Tab1');
+      } else {
+        setLoginError('El usuario o la contraseña no son correctos.');
+      }
     }
   };
 
@@ -88,6 +106,7 @@ const iniciarsesion: React.FC = () => {
             </IonItem>
             {passwordError && <p style={{ color: 'red' }}>{passwordError}</p>}
 
+            {loginError && <p style={{ color: 'red' }}>{loginError}</p>}
             <a href='#'>Olvido su contraseña?</a>
             <IonButton expand="block" onClick={handleLogin}>
               Login
