@@ -1,22 +1,3 @@
-.boton-accion {
-  width: 50px; /* Ajusta el ancho como desees */
-  height: 50px; /* Ajusta la altura como desees */
-  border-radius: 10px; /* Bordes redondeados */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 10px auto; /* Centra el botón horizontalmente */
-  background-color: #007bff; /* Color de fondo */
-  color: white; /* Color del texto */
-  font-size: 20px; /* Tamaño de fuente */
-  cursor: pointer; /* Cambia el cursor al pasar el mouse */
-}
-
-.boton-accion:hover {
-  background-color: #0056b3; /* Color de fondo al pasar el mouse */
-}
-
-
 .mesa {
   width: 20%;
   aspect-ratio: 1;
@@ -31,7 +12,7 @@
   cursor: pointer;
   position: relative;
   transition: all 0.3s ease;
-  margin: 2px; /* Reducción de márgenes */
+  margin: 1px;
 }
 
 .mesa.seleccionada {
@@ -61,4 +42,22 @@
 
 .mesa.desocupada {
   background-color: #2dd36f;
+}
+.acciones{
+  display: flex;
+  justify-content: center; /* Centra los botones horizontalmente */
+  flex-direction: column; /* Alinea los botones en columna */
+  gap: 10px; /* Espacio entre los botones */
+  margin-bottom: 20px; /* Añade espacio entre los botones y el contenido de las mesas */
+}
+
+/* Estilo para los botones (ajusta si es necesario) */
+.boton-accion {
+  font-size: 14px; /* Tamaño del texto */
+  padding: 8px 16px; /* Espaciado interno del botón */
+  border-radius: 6px; /* Bordes redondeados */
+  width: 25%; /* Los botones ahora ocupan el 25% del ancho de la página */
+  display: flex;
+  align-items: center; /* Alinea el icono y el texto verticalmente */
+  justify-content: center; /* Centra el contenido dentro del botón */
 }

@@ -65,19 +65,16 @@ const Mesas: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding">
-        <IonButton expand="block" onClick={agregarMesa}>
-          <IonIcon icon={add} slot="start" />
-          Agregar Mesa
-        </IonButton>
-        <IonButton 
-          expand="block" 
-          color="danger" 
-          onClick={eliminarMesasSeleccionadas}
-          disabled={mesasSeleccionadas.length === 0}
-        >
-          <IonIcon icon={remove} slot="start" />
-          Eliminar Mesas Seleccionadas
-        </IonButton>
+        <div className="acciones">
+          <IonButton className="boton-accion" onClick={agregarMesa}>
+            <IonIcon icon={add} />
+            Agregar Mesa
+          </IonButton>
+          <IonButton className="boton-accion" color="danger" onClick={eliminarMesasSeleccionadas} disabled={mesas.length === 0}>
+            <IonIcon icon={remove} />
+            Eliminar Mesas Seleccionadas
+          </IonButton>
+        </div>
         <IonGrid>
           <IonRow>
             {mesas.map(mesa => (
