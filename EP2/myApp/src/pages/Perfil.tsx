@@ -23,7 +23,7 @@ const Perfil: React.FC = () => {
   const history = useHistory();
 
   const handleLoginRedirect = () => {
-    history.push('/iniciarsesion'); // Cambiado de '/Login' a '/iniciarsesion'
+    history.push('/iniciarsesion'); 
   };
 
   return (
