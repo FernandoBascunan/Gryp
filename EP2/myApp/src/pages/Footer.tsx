@@ -1,6 +1,6 @@
 
 import {  IonTabBar, IonTabButton, IonIcon, IonLabel, IonFooter } from '@ionic/react';
-import { personCircle, gridOutline, restaurantOutline, cubeOutline } from 'ionicons/icons';
+import { personCircle, gridOutline, restaurantOutline, cubeOutline,newspaperOutline } from 'ionicons/icons';
 import {useHistory} from 'react-router-dom';
 const Footer: React.FC = () => {
     const history = useHistory();
@@ -16,6 +16,9 @@ const Footer: React.FC = () => {
     const inventory = () => {
         history.push('./Inventario');
     };
+    const order = () => {
+      history.push('./Orden');
+  };
     return(
         <IonFooter>
             <IonTabBar slot="bottom">
@@ -28,6 +31,11 @@ const Footer: React.FC = () => {
               <IonTabButton onClick={tables} tab="mesas" href="/Mesas">
                 <IonIcon icon={gridOutline} />
                 <IonLabel>Mesas</IonLabel>
+              </IonTabButton>
+
+              <IonTabButton onClick={order} tab="orden" href="/Orden">
+                <IonIcon icon={newspaperOutline} />
+                <IonLabel>Ordenes</IonLabel>
               </IonTabButton>
 
 
