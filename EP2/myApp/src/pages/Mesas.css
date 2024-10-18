@@ -1,5 +1,5 @@
 .mesa {
-  width: 20%;
+  width: 40%;
   aspect-ratio: 1;
   background-color: #f4f4f4;
   border: 2px solid #ddd;
@@ -45,19 +45,19 @@
 }
 .acciones{
   display: flex;
-  justify-content: center; /* Centra los botones horizontalmente */
-  flex-direction: column; /* Alinea los botones en columna */
-  gap: 10px; /* Espacio entre los botones */
-  margin-bottom: 20px; /* Añade espacio entre los botones y el contenido de las mesas */
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
-/* Estilo para los botones (ajusta si es necesario) */
 .boton-accion {
-  font-size: 14px; /* Tamaño del texto */
-  padding: 8px 16px; /* Espaciado interno del botón */
-  border-radius: 6px; /* Bordes redondeados */
-  width: 25%; /* Los botones ahora ocupan el 25% del ancho de la página */
+  font-size: 14px;
+  padding: 8px 16px;
+  border-radius: 6px;
+  width: 25%;
   display: flex;
-  align-items: center; /* Alinea el icono y el texto verticalmente */
-  justify-content: center; /* Centra el contenido dentro del botón */
+  align-items: center;
+  justify-content: center;
 }
+

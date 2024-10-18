@@ -78,11 +78,8 @@ const Mesas: React.FC = () => {
         <IonGrid>
           <IonRow>
             {mesas.map(mesa => (
-              <IonCol size="4" key={mesa.id}>
-                <div 
-                  className={`mesa ${mesasSeleccionadas.includes(mesa.id) ? 'seleccionada' : ''}`} 
-                  onClick={() => toggleSeleccionMesa(mesa.id)}
-                >
+              <IonCol style={{marginBottom:'60px'}} size="2" offset="1" key={mesa.id}>
+                <div className={`mesa ${mesasSeleccionadas.includes(mesa.id) ? 'seleccionada' : ''}`} onClick={() => toggleSeleccionMesa(mesa.id)}>
                   <span className="numero-mesa">{mesa.numero}</span>
                   {mesasSeleccionadas.includes(mesa.id) && (
                     <IonIcon icon={close} className="icono-seleccionado" />
