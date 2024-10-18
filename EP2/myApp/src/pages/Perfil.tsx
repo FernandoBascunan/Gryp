@@ -28,6 +28,7 @@ const Perfil: React.FC = () => {
 
   const handleReportRedirect = () => {
     window.open('../Archivos/Mensual.pdf', '_blank');
+    history.push('/iniciarsesion'); 
   };
 
   return (
