@@ -3,7 +3,7 @@ import { IonContent, IonPage, IonInput, IonButton, IonItem, IonLabel, IonHeader,
 import { useHistory } from 'react-router-dom';
 import './iniciarsesion.css';
 import { logoFacebook, logoTwitter, logoInstagram } from 'ionicons/icons';
-import usuarioData from '../usuario.json';
+import usuarioData from '../Json/usuario.json';
 
 
 const iniciarsesion: React.FC = () => {

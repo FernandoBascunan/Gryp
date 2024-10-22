@@ -11,12 +11,11 @@ import {
   IonList,
   IonListHeader,
   IonIcon,
-  IonButton
 } from '@ionic/react';
-import { mailOutline, callOutline, settings, logOut,idCardOutline, compassOutline,personAddOutline,documentOutline} from 'ionicons/icons';
+import { mailOutline, callOutline, settings, logOut, idCardOutline, compassOutline, personAddOutline, documentOutline } from 'ionicons/icons';
 import './Perfil.css';
 import { useHistory } from 'react-router-dom';
-import Tab1 from './Header';
+import Header from './Header';
 import Footer from './Footer';
 
 const Perfil: React.FC = () => {
@@ -26,14 +25,17 @@ const Perfil: React.FC = () => {
     history.push('/iniciarsesion');
   };
 
-  const handleReportRedirect = () => {
-    window.open('../Archivos/Mensual.pdf', '_blank');
-    history.push('/iniciarsesion'); 
+  const handleReportDownload = () => {
+
+    const link = document.createElement('a');
+    link.href = '/Files/Reporte.pdf'; 
+    link.download = 'Reporte.pdf';
+    link.click();
   };
 
   return (
     <IonPage>
-      <Tab1/>
+      <Header/>
       <IonHeader>
         <IonToolbar>
           <IonTitle>Perfil</IonTitle>
@@ -94,7 +96,7 @@ const Perfil: React.FC = () => {
             <IonIcon icon={logOut} slot="start" />
             <IonLabel>Cerrar Sesión</IonLabel>
           </IonItem>
-          <IonItem button onClick={handleReportRedirect}>
+          <IonItem button onClick={handleReportDownload}>
             <IonIcon icon={documentOutline} slot="start" />
             <IonLabel>Reportes Mensuales</IonLabel>
           </IonItem>

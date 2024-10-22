@@ -20,7 +20,7 @@ import Header from './Header';
 import Footer from './Footer';
 
 
-import inventarioData from '../inventario.json';
+import inventarioData from '../Json/inventario.json';
 
 interface Producto {
   id: number;

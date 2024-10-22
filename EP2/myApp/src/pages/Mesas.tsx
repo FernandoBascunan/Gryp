@@ -1,114 +1,145 @@
 import React, { useState } from 'react';
-import {
-  IonContent,
+import { 
+  IonContent, 
+  IonGrid, 
+  IonRow, 
+  IonCol, 
+  IonItem, 
+  IonLabel, 
+  IonToggle,
+  IonToolbar,
+  IonTitle,
   IonHeader,
   IonPage,
-  IonTitle,
-  IonToolbar,
-  IonGrid,
-  IonRow,
-  IonCol,
   IonButton,
-  IonIcon,
-  IonAlert
+  IonIcon
 } from '@ionic/react';
-import { add, remove, close } from 'ionicons/icons';
-import './Mesas.css';
-import Footer from './Footer';
+import { add, remove } from 'ionicons/icons';
 import Header from './Header';
+import Footer from './Footer';
+import './Mesas.css';
 
 interface Mesa {
   id: number;
-  numero: number;
+  disponible: boolean;
+  selected: boolean;
 }
 
 const Mesas: React.FC = () => {
-  const [mesas, setMesas] = useState<Mesa[]>([]);
-  const [mesasSeleccionadas, setMesasSeleccionadas] = useState<number[]>([]);
-  const [showAlert, setShowAlert] = useState(false);
+  const [mesas, setMesas] = useState<Mesa[]>(
+    Array.from({ length: 9 }, (_, index) => ({
+      id: index + 1,
+      disponible: true,
+      selected: false,
+    }))
+  );
+
+  const handleToggleChange = (mesaId: number) => {
+    setMesas(mesas.map(mesa => {
+      if (mesa.id === mesaId) {
+        return {
+          ...mesa,
+          selected: !mesa.selected
+        };
+      }
+      return {
+        ...mesa,
+        selected: false
+      };
+    }));
+  };
+
+  const cambiarDisponibilidad = (mesaId: number) => {
+    setMesas(mesas.map(mesa => {
+      if (mesa.id === mesaId) {
+        return {
+          ...mesa,
+          disponible: !mesa.disponible,
+          selected: false
+        };
+      }
+      return mesa;
+    }));
+  };
 
   const agregarMesa = () => {
-    const nuevoNumero = mesas.length > 0 ? Math.max(...mesas.map(m => m.numero)) + 1 : 1;
-    const nuevaMesa: Mesa = {
-      id: Date.now(),
-      numero: nuevoNumero
-    };
-    setMesas([...mesas, nuevaMesa]);
+    const newId = mesas.length > 0 ? Math.max(...mesas.map(m => m.id)) + 1 : 1;
+    setMesas([...mesas, {
+      id: newId,
+      disponible: true,
+      selected: false
+    }]);
   };
 
-  const toggleSeleccionMesa = (id: number) => {
-    setMesasSeleccionadas(prevState => 
-      prevState.includes(id)
-        ? prevState.filter(mesaId => mesaId !== id)
-        : [...prevState, id]
-    );
-  };
-
-  const eliminarMesasSeleccionadas = () => {
-    if (mesasSeleccionadas.length > 0) {
-      setShowAlert(true);
+  const eliminarMesa = () => {
+    const mesaSeleccionada = mesas.find(mesa => mesa.selected);
+    if (mesaSeleccionada) {
+      setMesas(mesas.filter(mesa => mesa.id !== mesaSeleccionada.id));
     }
   };
 
-  const confirmarEliminacion = () => {
-    setMesas(mesas.filter(mesa => !mesasSeleccionadas.includes(mesa.id)));
-    setMesasSeleccionadas([]);
-    setShowAlert(false);
-  };
+  const hayMesaSeleccionada = mesas.some(mesa => mesa.selected);
 
   return (
     <IonPage>
       <Header/>
-      <IonHeader>
-        <IonToolbar>
-          <IonTitle>Gestión de Mesas</IonTitle>
-        </IonToolbar>
-      </IonHeader>
-      <IonContent className="ion-padding">
+      <IonContent>
+        <IonHeader>
+          <IonToolbar>
+            <IonTitle>Gestión de Mesas</IonTitle>
+          </IonToolbar>
+        </IonHeader>
+
         <div className="acciones">
-          <IonButton className="boton-accion" onClick={agregarMesa}>
-            <IonIcon icon={add} />
+          <IonButton 
+            expand="block"
+            onClick={agregarMesa}
+            className="boton-accion"
+          >
+            <IonIcon icon={add} slot="start" />
             Agregar Mesa
           </IonButton>
-          <IonButton className="boton-accion" color="danger" onClick={eliminarMesasSeleccionadas} disabled={mesas.length === 0}>
-            <IonIcon icon={remove} />
-            Eliminar Mesas Seleccionadas
+          
+          <IonButton 
+            expand="block"
+            onClick={eliminarMesa}
+            className="boton-accion"
+            color="danger"
+            disabled={!hayMesaSeleccionada}
+          >
+            <IonIcon icon={remove} slot="start" />
+            Eliminar Mesa 
           </IonButton>
         </div>
+
         <IonGrid>
           <IonRow>
-            {mesas.map(mesa => (
-              <IonCol size="4" key={mesa.id}>
+            {mesas.map((mesa) => (
+              <IonCol size="6" sizeSm="4" sizeMd="3" key={mesa.id}>
                 <div 
-                  className={`mesa ${mesasSeleccionadas.includes(mesa.id) ? 'seleccionada' : ''}`} 
-                  onClick={() => toggleSeleccionMesa(mesa.id)}
+                  className={`mesa ${mesa.selected ? 'seleccionada' : ''} ${
+                    mesa.disponible ? 'desocupada' : 'ocupada'
+                  }`}
+                  onClick={() => handleToggleChange(mesa.id)}
                 >
-                  <span className="numero-mesa">{mesa.numero}</span>
-                  {mesasSeleccionadas.includes(mesa.id) && (
-                    <IonIcon icon={close} className="icono-seleccionado" />
+                  <span className="numero-mesa">Mesa {mesa.id}</span>
+                  {mesa.selected && (
+                    <span className="icono-seleccionado">
+                      {mesa.disponible ? '✓' : '×'}
+                    </span>
                   )}
                 </div>
+                <IonItem lines="none">
+                  <IonLabel>Disponibilidad</IonLabel>
+                  <IonToggle 
+                    checked={mesa.disponible} 
+                    onIonChange={() => cambiarDisponibilidad(mesa.id)}
+                  />
+                </IonItem>
               </IonCol>
             ))}
           </IonRow>
         </IonGrid>
-        <IonAlert
-          isOpen={showAlert}
-          onDidDismiss={() => setShowAlert(false)}
-          header="Confirmar eliminación"
-          message="¿Estás seguro de que quieres eliminar las mesas seleccionadas?"
-          buttons={[
-            {
-              text: 'Cancelar',
-              role: 'cancel',
-              handler: () => setShowAlert(false)
-            },
-            {
-              text: 'Eliminar',
-              handler: confirmarEliminacion
-            }
-          ]}
-        />
       </IonContent>
       <Footer/>
     </IonPage>

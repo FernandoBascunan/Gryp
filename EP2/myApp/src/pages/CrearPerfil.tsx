@@ -13,10 +13,11 @@ import {
   IonListHeader,
   IonToast,
 } from '@ionic/react';
-import { useHistory } from 'react-router-dom'; // Importar useHistory para redirección
+import { useHistory } from 'react-router-dom'; 
+import Header from './Header';
 
 const CrearPerfil: React.FC = () => {
-  const history = useHistory(); // Inicializar useHistory
+  const history = useHistory(); 
   const [username, setUsername] = useState('');
   const [rut, setRut] = useState('');
   const [email, setEmail] = useState('');
@@ -27,7 +28,7 @@ const CrearPerfil: React.FC = () => {
   const [showToast, setShowToast] = useState(false);
 
   const handleSubmit = () => {
-    // Aquí puedes agregar la lógica para manejar la creación del perfil.
+
     console.log({
       username,
       rut,
@@ -38,16 +39,17 @@ const CrearPerfil: React.FC = () => {
       password,
     });
 
-    // Mostrar un mensaje de éxito
+ 
     setShowToast(true);
   };
 
   const handleBack = () => {
-    history.push('/perfil'); // Redirigir al perfil
+    history.push('/perfil'); 
   };
 
   return (
     <IonPage>
+      <Header/>
       <IonHeader>
         <IonToolbar>
           <IonTitle>Crear Perfil</IonTitle>
@@ -89,7 +91,7 @@ const CrearPerfil: React.FC = () => {
           Crear Perfil
         </IonButton>
         <IonButton expand="full" color="medium" onClick={handleBack} style={{ marginTop: '10px' }}>
-          Volver a Perfiles
+          Volver
         </IonButton>
         
         <IonToast

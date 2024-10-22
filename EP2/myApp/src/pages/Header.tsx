@@ -1,6 +1,6 @@
 import React from 'react';
-import {IonPage, IonHeader, IonToolbar, IonTitle} from '@ionic/react';
-import { IonReactRouter } from '@ionic/react-router';
+import {IonHeader, IonToolbar, IonTitle} from '@ionic/react';
+
 
 
 
