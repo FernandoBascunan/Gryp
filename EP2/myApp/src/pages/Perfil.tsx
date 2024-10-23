@@ -88,10 +88,6 @@ const Perfil: React.FC = () => {
             <IonIcon icon={settings} slot="start" />
             <IonLabel>Configuración</IonLabel>
           </IonItem>
-          <IonItem button onClick={() => history.push('/crear-perfil')}>
-            <IonIcon icon={personAddOutline} slot="start" />
-            <IonLabel>Crear Perfiles</IonLabel>
-          </IonItem>
           <IonItem button onClick={handleLoginRedirect}>
             <IonIcon icon={logOut} slot="start" />
             <IonLabel>Cerrar Sesión</IonLabel>
