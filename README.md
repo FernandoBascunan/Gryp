@@ -27,7 +27,7 @@ Mi propuesta es una aplicación web responsiva, por tal razón se ha considerado
 
 La base de datos que he seleccionado es relacional, el motor de la base de datos ha usar es MySQL 
 
-[Modelo de la BD](EP2/DB.png)
+[Modelo de la BD](GrypDB.png)
 
 # Justificación
 
