@@ -22,7 +22,7 @@ const AppRouter:React.FC =()=>{
               <Route path="/Orden" component={Orden} exact={true} />
               <Route path="/Inventario" component={Inventario} exact={true} />
               <Route path="/iniciarsesion" component={iniciarsesion} exact={true} />
-              <Route path="/crear-perfil" component={CrearPerfil} />
+              <Route path="/CrearPerfil" component={CrearPerfil} />
               <Route path="/Tab1" render={() => <Redirect to="/Perfil" />} exact={true} />
         </IonReactRouter>
     )

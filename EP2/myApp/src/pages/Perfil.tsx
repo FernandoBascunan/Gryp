@@ -12,7 +12,7 @@ import {
   IonListHeader,
   IonIcon,
 } from '@ionic/react';
-import { mailOutline, callOutline, settings, logOut, idCardOutline, compassOutline, personAddOutline, documentOutline } from 'ionicons/icons';
+import { mailOutline, callOutline, settings, logOut, idCardOutline, compassOutline, documentOutline,peopleOutline } from 'ionicons/icons';
 import './Perfil.css';
 import { useHistory } from 'react-router-dom';
 import Header from './Header';
@@ -23,6 +23,9 @@ const Perfil: React.FC = () => {
 
   const handleLoginRedirect = () => {
     history.push('/iniciarsesion');
+  };
+  const handleProfile = () => {
+    history.push('/CrearPerfil');
   };
 
   const handleReportDownload = () => {
@@ -84,13 +87,14 @@ const Perfil: React.FC = () => {
 
         <IonList>
           <IonListHeader>Opciones</IonListHeader>
-          <IonItem button>
-            <IonIcon icon={settings} slot="start" />
-            <IonLabel>Configuración</IonLabel>
-          </IonItem>
+          
           <IonItem button onClick={handleLoginRedirect}>
             <IonIcon icon={logOut} slot="start" />
             <IonLabel>Cerrar Sesión</IonLabel>
+          </IonItem>
+          <IonItem button onClick={handleProfile}>
+            <IonIcon icon={peopleOutline} slot="start" />
+            <IonLabel>Gestionar Trabajadores</IonLabel>
           </IonItem>
           <IonItem button onClick={handleReportDownload}>
             <IonIcon icon={documentOutline} slot="start" />
