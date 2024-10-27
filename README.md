@@ -1,3 +1,4 @@
+#EP2
 # Caso de Estudio
 Nuestro proyecto se centra en un sistema de gestion de restaurantes llamado "Gryp" el cual se enfoca en facilitar el manejo del restaurante con funciones para gestionar pedidos, mesas del restaurante, gestión de inventario entre otras funciones.
 
